@@ -12,5 +12,6 @@ function getFacts() {
     .then(response => response.text())
     .then((data) => {
         card_title.innerHTML = input;
+        card_text.innerHTML = data;
     });
 }

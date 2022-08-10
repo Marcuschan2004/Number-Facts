@@ -8,9 +8,9 @@ function getFacts() {
     let card_title = document.querySelector(".card_title");
     let card_text = document.querySelector(".card-text");
 
-    fetch("http://numbersapi.com/5")
+    fetch('http://numbersapi.com/${input}')
     .then(response => response.text())
     .then((data) => {
-        console.log(data);
+        card_title.innerHTML = input;
     });
 }

@@ -11,7 +11,7 @@ function getFacts() {
     if (input !=="") {
         card.classList.remove("d-none");
 
-        fetch('http://numbersapi.com/${input}')
+        fetch('https://numbersapi.com/${input}')
     .then(response => response.text())
     .then((data) => {
         card_title.innerHTML = input;

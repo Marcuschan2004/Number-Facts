@@ -8,10 +8,32 @@ function getFacts() {
     let card_title = document.querySelector(".card_title");
     let card_text = document.querySelector(".card-text");
 
-    fetch('http://numbersapi.com/${input}')
+    if (input !=="") {
+        card.classList.remove("d-none");
+
+        fetch('http://numbersapi.com/${input}')
     .then(response => response.text())
     .then((data) => {
         card_title.innerHTML = input;
         card_text.innerHTML = data;
-    });
+    })
+    .catch((err) => console.log(err));
+    }
+}
+
+let copy_btn = document.querySelector(".copy-btn");
+copy_btn.addEventListener("click", () => {
+    copyText();
+})
+
+function copyText() {
+    const textarea = document.createElement("textarea");
+    let card_text = document.querySelector(".card-text").innerHTML;
+
+    textarea.value = card_text;
+    document.body.append(textarea)
+    textarea.select()
+    document.execCommand("copy")
+    textarea.remove()
+    alert("Fact has been copied!");
 }

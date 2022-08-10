@@ -1,14 +1,17 @@
-const settings = {
-	"async": true,
-	"crossDomain": true,
-	"url": "https://quotes15.p.rapidapi.com/quotes/random/",
+fetch("https://quotes15.p.rapidapi.com/quotes/random/?language_code=en", {
 	"method": "GET",
 	"headers": {
-		"X-RapidAPI-Key": "5c66b16a91msh73202644311eb98p12909fjsnde305679b6a5",
-		"X-RapidAPI-Host": "quotes15.p.rapidapi.com"
+		"x-rapidapi-host": "quotes15.p.rapidapi.com",
+		"x-rapidapi-key": MY_API_KEY
 	}
-};
-
-$.ajax(settings).done(function (response) {
-	console.log(response);
+})
+.then(response => response.json())
+.then(response => {
+    console.log(response);
+    
+    document.getElementById('quote').innerHTML = response.content;
+    document.getElementById('author').innerHTML = '- ' + response.originator.name + ' -';
+})
+.catch(err => {
+	console.log(err);
 });

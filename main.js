@@ -1,3 +1,5 @@
+import { MY_API_KEY } from './config.js';
+
 fetch("https://quotes15.p.rapidapi.com/quotes/random/?language_code=en", {
 	"method": "GET",
 	"headers": {

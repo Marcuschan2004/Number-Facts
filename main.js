@@ -1,14 +1,14 @@
-enter_btn = document.querySelector(".btn");
-card = document.querySelector(".card");
+let enter_btn = document.querySelector(".btn");
+let card = document.querySelector(".card");
 
 enter_btn.addEventListener("click", getFacts);
 
-getFacts() {
-  input = document.querySelector(".input").value;
-  card_title = document.querySelector(".card_title");
- card_text = document.querySelector(".card-text");
+function getFacts() {
+    let input = document.querySelector(".input").value;
+    let card_title = document.querySelector(".card_title");
+    let card_text = document.querySelector(".card-text");
 
-  (input !=="") {
+    if (input !=="") {
         card.classList.remove("d-none");
 
         fetch('http://numbersapi.com/${input}')
@@ -21,14 +21,14 @@ getFacts() {
     }
 }
 
-copy_btn = document.querySelector(".copy-btn");
+let copy_btn = document.querySelector(".copy-btn");
 copy_btn.addEventListener("click", () => {
     copyText();
 })
 
- copyText() {
-   textarea = document.createElement("textarea");
- card_text = document.querySelector(".card-text").innerHTML;
+function copyText() {
+    const textarea = document.createElement("textarea");
+    let card_text = document.querySelector(".card-text").innerHTML;
 
     textarea.value = card_text;
     document.body.append(textarea)

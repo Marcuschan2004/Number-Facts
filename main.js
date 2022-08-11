@@ -22,10 +22,7 @@ fetch('https://numbersapi.p.rapidapi.com/5/trivia?fragment=true&notfound=floor&j
 	.catch(err => console.error(err));
         card_title.innerHTML = input;
         card_text.innerHTML = data;
-    })
-    .catch((err) => console.log(err));
     }
-}
 
 let copy_btn = document.querySelector(".copy-btn");
 copy_btn.addEventListener("click", () => {

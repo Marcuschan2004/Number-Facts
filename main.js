@@ -16,7 +16,7 @@ function getFacts() {
 	}
 };
 
-fetch('https://numbersapi.p.rapidapi.com/42/trivia?fragment=true&notfound=floor&json=true', options)
+fetch('https://numbersapi.p.rapidapi.com/5/trivia?fragment=true&notfound=floor&json=true', options)
 	.then(response => response.json())
 	.then(response => console.log(response))
 	.catch(err => console.error(err));

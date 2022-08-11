@@ -8,7 +8,7 @@ function getFacts() {
     let card_title = document.querySelector(".card_title");
     let card_text = document.querySelector(".card-text");
 
-    const options = {
+   const options = {
 	method: 'GET',
 	headers: {
 		'X-RapidAPI-Key': '5c66b16a91msh73202644311eb98p12909fjsnde305679b6a5',
@@ -16,7 +16,7 @@ function getFacts() {
 	}
 };
 
-fetch('https://numbersapi.p.rapidapi.com/6/21/date?fragment=true&json=true', options)
+fetch('https://numbersapi.p.rapidapi.com/42/trivia?fragment=true&notfound=floor&json=true', options)
 	.then(response => response.json())
 	.then(response => console.log(response))
 	.catch(err => console.error(err));

@@ -71,3 +71,4 @@ function copyText() {
     });
     facts = []
 }
+
